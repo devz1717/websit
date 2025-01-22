@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1b1b1b;
+    color: #fff;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+  }
+  
+  .logo img {
+    width: 180px;
+  }
+  
+  .nav {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .auth-buttons input {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .auth-buttons button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .auth-buttons .register {
+    background-color: #f05dce;
+    color: #fff;
+  }
+  
+  .jackpot-banner {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #f05dce, #222);
+    color: #fff;
+    font-size: 1.5em;
+  }
+  
+  .jackpot-amount {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff00ff;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .game-item {
+    text-align: center;
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .game-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .game-item p {
+    margin-top: 10px;
+  }
+
+  audio::-webkit-media-controls-play-button {
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    background-color: #4CAF50; 
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.running-text p {
+    display: inline-block;
+    animation: scrollText 10s linear infinite;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6600; 
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%); 
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+
+/* Membungkus kedua elemen Game dan Video dalam satu kontainer */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between; /* Menyebar ruang di antara game grid dan video */
+    gap: 20px; /* Memberi jarak antara game grid dan video */
+    flex-wrap: wrap; /* Agar konten bisa menyesuaikan pada perangkat kecil */
+  }
+  
+  /* Styling untuk game grid */
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    flex: 1; /* Membuat game grid menempati ruang yang tersisa */
+  }
+  
+  /* Styling untuk video container */
+  .video-container {
+    flex-basis: 30%; /* Video akan mengambil 30% dari ruang di samping game */
+    max-width: 400px; /* Maksimal lebar video */
+    position: relative;
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: auto; /* Membiarkan tinggi video disesuaikan dengan aspek rasio */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Agar video menjadi responsif pada perangkat kecil */
+  @media screen and (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column; /* Mengubah layout menjadi vertikal pada perangkat kecil */
+    }
+  
+    .video-container {
+      flex-basis: 100%; /* Video akan mengambil seluruh lebar di perangkat kecil */
+      margin-top: 20px; /* Memberikan ruang antara video dan game grid */
+    }
+  }
+  
+  /* Styling umum untuk video di bawah */
+.bottom-video {
+    position: fixed; /* Menjaga posisi video tetap di bagian bawah */
+    bottom: 20px; /* Memberikan jarak 20px dari bawah */
+    left: 50%; /* Memusatkan video secara horizontal */
+    transform: translateX(-50%); /* Menarik video agar benar-benar berada di tengah */
+    z-index: 1000; /* Memastikan video berada di atas konten lainnya */
+    width: 60%; /* Mengatur lebar video sesuai keinginan */
+    max-width: 600px; /* Membatasi lebar maksimal video */
+  }
+  
+  /* Styling untuk elemen video */
+  .bottom-video video {
+    width: 100%; /* Video akan mengisi lebar kontainer */
+    height: auto; /* Menjaga aspek rasio video */
+    border-radius: 10px; /* Memberikan efek sudut melengkung pada video */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Memberikan bayangan pada video */
+  }
+  
+  /* Responsif: Video menjadi lebih kecil pada perangkat mobile */
+  @media screen and (max-width: 768px) {
+    .bottom-video {
+      width: 80%; /* Lebar video lebih besar pada perangkat kecil */
+    }
+  }
+  
